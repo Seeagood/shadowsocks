@@ -2,13 +2,11 @@ FROM alpine:3.10
 
 LABEL maintainer="jordenyt <jordenyt@gmail.com>"
 
-ARG TZ='Asia/Shanghai'
+ARG TZ='Asia/Hong_Kong'
 
 ENV TZ ${TZ}
-ENV SS_LIBEV_VERSION v3.2.5
-ENV KCP_VERSION 20190809
 ENV SS_DOWNLOAD_URL https://github.com/shadowsocks/shadowsocks-libev.git 
-ENV KCP_DOWNLOAD_URL https://github.com/xtaci/kcptun/releases/download/v${KCP_VERSION}/kcptun-linux-arm7-${KCP_VERSION}.tar.gz
+ENV KCP_DOWNLOAD_URL https://github.com/xtaci/kcptun/releases/download/v20190809/kcptun-linux-arm7-20190809.tar.gz
 ENV PLUGIN_OBFS_DOWNLOAD_URL https://github.com/shadowsocks/simple-obfs.git
 ENV PLUGIN_V2RAY_DOWNLOAD_URL https://github.com/shadowsocks/v2ray-plugin/releases/download/v1.1.0/v2ray-plugin-linux-arm-v1.1.0.tar.gz
 ENV LINUX_HEADERS_DOWNLOAD_URL=http://dl-cdn.alpinelinux.org/alpine/v3.10/main/armv7/linux-headers-4.19.36-r0.apk
@@ -32,7 +30,7 @@ RUN apk upgrade \
     && apk add --virtual .build-deps-kernel /linux-headers.apk \
     && git clone ${SS_DOWNLOAD_URL} \
     && (cd shadowsocks-libev \
-    && git checkout tags/${SS_LIBEV_VERSION} -b ${SS_LIBEV_VERSION} \
+    && git checkout master \
     && git submodule update --init --recursive \
     && ./autogen.sh \
     && ./configure --prefix=/usr --disable-documentation \
