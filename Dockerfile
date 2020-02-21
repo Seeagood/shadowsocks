@@ -6,9 +6,9 @@ ARG TZ='Asia/Hong_Kong'
 
 ENV TZ ${TZ}
 ENV SS_DOWNLOAD_URL https://github.com/shadowsocks/shadowsocks-libev.git 
-ENV KCP_DOWNLOAD_URL http://github.com/xtaci/kcptun/releases/download/v20190924/kcptun-linux-arm7-20190924.tar.gz
+ENV KCP_DOWNLOAD_URL https://github.com/xtaci/kcptun/releases/download/v20200201/kcptun-linux-arm7-20200201.tar.gz
 ENV PLUGIN_OBFS_DOWNLOAD_URL https://github.com/shadowsocks/simple-obfs.git
-ENV PLUGIN_V2RAY_DOWNLOAD_URL http://github.com/shadowsocks/v2ray-plugin/releases/download/v1.2.0/v2ray-plugin-linux-arm-v1.2.0.tar.gz
+ENV PLUGIN_V2RAY_DOWNLOAD_URL https://github.com/shadowsocks/v2ray-plugin/releases/download/v1.3.0/v2ray-plugin-linux-arm-v1.3.0.tar.gz
 ENV LINUX_HEADERS_DOWNLOAD_URL=http://dl-cdn.alpinelinux.org/alpine/v3.10/main/armv7/linux-headers-4.19.36-r0.apk
 
 RUN apk upgrade \
